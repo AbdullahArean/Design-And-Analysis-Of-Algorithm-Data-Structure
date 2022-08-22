@@ -34,3 +34,6 @@ Prim Algorithm tested over 12 random graph(Time Stamp in Micro Second) and Krusk
 [Prims Algorithm Result](https://docs.google.com/spreadsheets/d/1o7hJKIJXeZbm71hMhuzeFDwiU1wGHqNCqMy10bQznJA/) <br>
 [Kruskal's Algorithm Result](https://docs.google.com/spreadsheets/d/e/2PACX-1vSBgGnrMR5f25MgNgBwxoUJcxA06cJ0cFOT9y0B8amgfgYKW8MNnKi5z6cOrcgmKfIhqCjTamydPXh7/pubchart?oid=33088508&format=interactive) <br>
 [Full Result Data Sheet](https://docs.google.com/spreadsheets/d/1o7hJKIJXeZbm71hMhuzeFDwiU1wGHqNCqMy10bQznJA/)
+### Discussion:
+Kruskal time complexity worst case is O(E log E),this because we need to sort the edges. Prim time complexity worst case is O(E log V) with priority queue or even better, O(E+V log V) with Heap. We should use Kruskal when the graph is sparse, i.e.small number of edges,like E=O(V),when the edges are already sorted or if we can sort them in linear time. We should use Prim when the graph is dense, i.e number of edges is high , like E=O(V²).
+Analzying the runtime of both the algorithm, we can notice heap implementations are way more faster than LinkedList implementation, array implementation is the slowest. We can also notice that, Standard Template Library implementation is not always best in term of time complexity.
