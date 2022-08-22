@@ -21,8 +21,8 @@ for line in nx.generate_edgelist(G, data=["weight"]):
 #Test With Code
 str = 'Kruskal_MST'
 str2= 'Prim_MST'
-os.system(f"cd '../Experiment_with_Prim_Kruskal/' && g++ {str}.cpp -o {str} && '../Experiment_with_Prim_Kruskal/'{str}")
-os.system(f"cd '../Experiment_with_Prim_Kruskal/' && g++ {str2}.cpp -o {str2} && '../Experiment_with_Prim_Kruskal/'{str2}")
+os.system(f"cd '../Prim-Kruskal-Graph-Implementation/' && g++ {str}.cpp -o {str} && '../Prim-Kruskal-Graph-Implementation/'{str}")
+os.system(f"cd '../Prim-Kruskal-Graph-Implementation/' && g++ {str2}.cpp -o {str2} && '../Prim-Kruskal-Graph-Implementation/'{str2}")
 
 
 
