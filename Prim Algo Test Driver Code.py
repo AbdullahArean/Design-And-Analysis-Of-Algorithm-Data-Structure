@@ -5,7 +5,7 @@ import os
 
 #Generate
 for i in range(20):
-    nvertex = random.randint(100,200)
+    nvertex = random.randint(100,150)
     G = nx.erdos_renyi_graph(nvertex, 0.5, seed=123, directed=False)
     for (u,v,w) in G.edges(data=True):
         w['weight'] = random.randint(0,10000)
@@ -20,7 +20,7 @@ for i in range(20):
         print(line)
 
 #Test With Code
-    str = 'Kruskal_MST'
+    #str = 'Kruskal_MST'
     str2= 'Prim_MST'
     #os.system(f"cd '../Prim-Kruskal-Graph-Implementation/' && g++ {str}.cpp -o {str} && '../Prim-Kruskal-Graph-Implementation/'{str}")
     os.system(f"cd '../Prim-Kruskal-Graph-Implementation/' && g++ {str2}.cpp -o {str2} && '../Prim-Kruskal-Graph-Implementation/'{str2}")

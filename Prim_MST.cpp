@@ -2,7 +2,7 @@
 #include <chrono>
 using namespace std;
 using namespace std::chrono;
-#define HEAP_SIZE 1000000
+#define HEAP_SIZE 100000
 
 class edge
 {
@@ -353,7 +353,7 @@ public:
     int prim_mst_array()
     {
         // Container To Keep The Active Edges
-        edge container[HEAP_SIZE];
+        edge *container = new edge[HEAP_SIZE];
         int containerlen = 0;
         // Visited Array that denotes whether a node has been in MST or not
         bool *visited = new bool[nver]{0};
@@ -384,6 +384,7 @@ public:
                 }
             }
         }
+        delete [] container;
         return ans;
     }
     int prim_mst_bin_min_heap(){
@@ -465,7 +466,7 @@ public:
 int main()
 {
     freopen("inp.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+    freopen("output.txt", "a", stdout);
     int v, e, a, b, c;
     cin >> v >> e;
     Graph g1 = Graph(v);
@@ -474,24 +475,29 @@ int main()
         cin >> a >> b >> c;
         g1.addedge(a, b, c);
     }
-    auto start1 = high_resolution_clock::now();
-    cout << g1.prim_mst_stl_priority_Queue() << endl;
-    auto stop1 = high_resolution_clock::now();
-    auto duration1 = duration_cast<microseconds>(stop1 - start1);
-    cout<< "STL Priority Queue "<< duration1.count()<<" microseconds"<<endl;
-    auto start2 = high_resolution_clock::now();
-    cout << g1.prim_mst_bin_min_heap() << endl;
-    auto stop2 = high_resolution_clock::now();
-    auto duration2 = duration_cast<microseconds>(stop2 - start2);
-    cout<< "Binary Heap "<< duration2.count()<<" microseconds"<<endl;
-    auto start3 = high_resolution_clock::now();
-    cout << g1.prim_mst_linkedlist() << endl;
-    auto stop3 = high_resolution_clock::now();
-    auto duration3 = duration_cast<microseconds>(stop3 - start3);
-    cout<< "Linked List "<< duration3.count()<<" microseconds"<<endl;
-    auto start4 = high_resolution_clock::now();
-    cout << g1.prim_mst_array() << endl;
-    auto stop4 = high_resolution_clock::now();
-    auto duration4 = duration_cast<microseconds>(stop4 - start4);
-    cout<< "Array "<< duration4.count()<<" microseconds"<<endl;
+    //Run Prim Algo Test after removing comment of below code, it will generate results
+    // cout<<v<<" "<<e<<" ";
+    // auto start1 = high_resolution_clock::now();
+    // g1.prim_mst_stl_priority_Queue();
+    // auto stop1 = high_resolution_clock::now();
+    // auto duration1 = duration_cast<microseconds>(stop1 - start1);
+    // cout<<" "<< duration1.count();
+
+    // auto start2 = high_resolution_clock::now();
+    // g1.prim_mst_bin_min_heap();
+    // auto stop2 = high_resolution_clock::now();
+    // auto duration2 = duration_cast<microseconds>(stop2 - start2);
+    // cout<<" "<<duration2.count();
+
+    // auto start3 = high_resolution_clock::now();
+    // g1.prim_mst_linkedlist();
+    // auto stop3 = high_resolution_clock::now();
+    // auto duration3 = duration_cast<microseconds>(stop3 - start3);
+    // cout<<" "<< duration3.count();
+
+    // auto start4 = high_resolution_clock::now();
+    // g1.prim_mst_array();
+    // auto stop4 = high_resolution_clock::now();
+    // auto duration4 = duration_cast<microseconds>(stop4 - start4);
+    // cout<<" "<<duration4.count()<<endl;
 }
