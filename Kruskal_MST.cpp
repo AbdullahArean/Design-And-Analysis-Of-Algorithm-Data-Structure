@@ -766,7 +766,7 @@ int main()
     printf("1.DSU_PC_UR_STL\n2.DSU_UR_STL\n3.DSU_PC_STL\n4.DSU_STL\n5.DSU_PC_UR_LinkedList\n6.DSU_UR_LinkedList\n7.DSU_PC_LinkedList\n8.DSU_LinkedList\n9.DSU_PC_UR_Array\n10.DSU_UR_Array\n11.DSU_PC_Array\n12.DSU_SArray\n13.Exit (Give -1 as input)\n");
     
     cin >> choice;
-	if(choice==-1) break;
+	if(choice==-1 && choice>12) break;
 
     auto start1 = high_resolution_clock::now();
     switch (choice)
