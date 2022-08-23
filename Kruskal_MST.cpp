@@ -750,8 +750,8 @@ public:
 int main()
 {
 
-	freopen("inp.txt", "r", stdin);
-	freopen("output.txt", "a", stdout);
+	freopen("input2.txt", "r", stdin);
+	freopen("output_kruskal.txt", "w", stdout);
 	int v, e, a, b, c;
 	cin >> v >> e;
 	Graph g1 = Graph(v);
@@ -760,6 +760,65 @@ int main()
 		cin >> a >> b >> c;
 		g1.addEdge(a, b, c);
 	}
+	int choice = 0;
+	while(choice!=-1){
+		printf("Which Implementation You Want For Kruskal's to run?\n");
+    printf("1.DSU_PC_UR_STL\n2.DSU_UR_STL\n3.DSU_PC_STL\n4.DSU_STL\n5.DSU_PC_UR_LinkedList\n6.DSU_UR_LinkedList\n7.DSU_PC_LinkedList\n8.DSU_LinkedList\n9.DSU_PC_UR_Array\n10.DSU_UR_Array\n11.DSU_PC_Array\n12.DSU_SArray\n13.Exit (Give -1 as input)\n");
+    
+    cin >> choice;
+	if(choice==-1) break;
+
+    auto start1 = high_resolution_clock::now();
+    switch (choice)
+    {
+    case 1:
+		cout<<"DSU_PC_UR_STL: MST Kruskal Implementation "<<g1.kruskal_mst_DSU_PC_UR_STL();
+		break;
+	case 2:
+		cout<<"DSU_UR_STL: MST Kruskal Implementation "<<g1.kruskal_mst_DSU_UR_STL();
+		break;
+	case 3:
+		cout<<"DSU_PC_STL: MST  Kruskal Implementation "<<g1.kruskal_mst_DSU_PC_STL();
+		break;
+	case 4:
+		cout<<"DSU_STL: MST Kruskal Implementation "<<g1.kruskal_mst_DSU_STL();
+		break;
+	case 5:
+		cout<<"DSU_PC_UR_LinkedList: MST Kruskal Implementation "<<g1.kruskal_mst_DSU_PC_UR_LinkedList();
+		break;
+	case 6:
+		cout<<"DSU_UR_LinkedList: MST Kruskal Implementation "<<g1.kruskal_mst_DSU_UR_LinkedList();
+		break;
+	case 7:
+		cout<<"DSU_PC_LinkedList: MST  Kruskal Implementation "<<g1.kruskal_mst_DSU_PC_LinkedList();
+		break;
+	case 8:
+		cout<<"DSU_LinkedList: MST Kruskal Implementation "<<g1.kruskal_mst_DSU_LinkedList();
+		break;
+	case 9:
+		cout<<"DSU_PC_UR_Array: MST Kruskal Implementation "<<g1.kruskal_mst_DSU_PC_UR_Array();
+		break;
+	case 10:
+		cout<<"DSU_UR_Array: MST Kruskal Implementation "<<g1.kruskal_mst_DSU_UR_Array();
+		break;
+	case 11:
+		cout<<"DSU_PC_Array: MST  Kruskal Implementation "<<g1.kruskal_mst_DSU_PC_Array();
+		break;
+	case 12:
+		cout<<"DSU_Array: MST Kruskal Implementation "<<g1.kruskal_mst_DSU_Array();
+		break;
+	
+	default:
+		break;
+	}
+	auto stop1 = high_resolution_clock::now();
+    auto duration1 = duration_cast<microseconds>(stop1 - start1);
+    cout << " Time Required: " << duration1.count() << " microseconds" << endl;
+    ;
+
+	}
+	
+	//Test
 	// cout<<v<<" "<<e<<" ";
 	// auto start1 = high_resolution_clock::now();
     // g1.kruskal_mst_DSU_PC_UR_STL();

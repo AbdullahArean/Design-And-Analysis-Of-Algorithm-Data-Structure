@@ -480,7 +480,7 @@ public:
 
 int main()
 {
-    freopen("input1.txt", "r", stdin); // Select input1/input2/input3
+    freopen("input3.txt", "r", stdin); 
     freopen("output_prim.txt", "w", stdout);
     int v, e, a, b, c;
     cin >> v >> e;
@@ -490,11 +490,13 @@ int main()
         cin >> a >> b >> c;
         g1.addedge(a, b, c);
     }
+    int choice = 0;
+    while(choice!=-1){
 
     printf("Which Implementation You Want For Prim's to run?\n");
-    printf("1.STL Priority Queue\n2.Binary Min Heap\n3.LinkedList\n4.Array\n5.Exit\n");
-    int choice = -1;
+    printf("1.STL Priority Queue\n2.Binary Min Heap\n3.LinkedList\n4.Array\n5.Exit(Give -1 as input)\n");
     cin >> choice;
+    if(choice==-1 || choice>4) break;
 
     auto start1 = high_resolution_clock::now();
     switch (choice)
@@ -533,6 +535,9 @@ int main()
     auto duration1 = duration_cast<microseconds>(stop1 - start1);
     cout << " Time Required: " << duration1.count() << " microseconds" << endl;
     ;
+
+    }
+
 
     // Run Prim Algo Test after removing comment of below code, it will generate results
     //  cout<<v<<" "<<e<<" ";
