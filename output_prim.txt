@@ -1,0 +1,7 @@
+Which Implementation You Want For Prim's to run?
+1.STL Priority Queue
+2.Binary Min Heap
+3.LinkedList
+4.Array
+5.Exit
+Binary Min Heap Minimum Spanning Tree Answer: 26667 Time Required: 4341 microseconds

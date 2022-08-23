@@ -213,30 +213,35 @@ public:
     }
     edge pop_heap()
     {
-        if(heap_size<= 0) return {-1,-1};
-        if (heap_size==1){
+        if (heap_size <= 0)
+            return {-1, -1};
+        if (heap_size == 1)
+        {
             heap_size--;
             return arr[0];
         }
         edge root = arr[0];
-        arr[0]=arr[heap_size-1];
+        arr[0] = arr[heap_size - 1];
         heap_size--;
         Minheeapify(0);
         return root;
-
     }
-    void Minheeapify(int i){
-        int  l = left_child(i);
-        int  r= right_child(i);
+    void Minheeapify(int i)
+    {
+        int l = left_child(i);
+        int r = right_child(i);
 
-        int smallest= i;
-        if(l<heap_size && arr[l].wei<arr[i].wei ){
-            smallest=l;
+        int smallest = i;
+        if (l < heap_size && arr[l].wei < arr[i].wei)
+        {
+            smallest = l;
         }
-        if(r<heap_size && arr[r].wei<arr[smallest].wei){
-            smallest=r;
+        if (r < heap_size && arr[r].wei < arr[smallest].wei)
+        {
+            smallest = r;
         }
-        if(smallest!=i){
+        if (smallest != i)
+        {
             swap(&arr[i], &arr[smallest]);
             Minheeapify(smallest);
         }
@@ -251,21 +256,26 @@ public:
         heap_size++;
         int i = heap_size - 1;
         arr[i] = given;
-        while(i != 0 && arr[get_parent(i)].wei > arr[i].wei)
+        while (i != 0 && arr[get_parent(i)].wei > arr[i].wei)
         {
             swap(&arr[i], &arr[get_parent(i)]);
             i = get_parent(i);
         }
     }
-    void printheap(){
-        for(int i=0; i<heap_size; i++){
-            cout<<arr[i].wei<<endl;
+    void printheap()
+    {
+        for (int i = 0; i < heap_size; i++)
+        {
+            cout << arr[i].wei << endl;
         }
-        cout<<endl;
+        cout << endl;
     }
-    bool isempty(){
-        if(heap_size<=0) return true;
-        else return false;
+    bool isempty()
+    {
+        if (heap_size <= 0)
+            return true;
+        else
+            return false;
     }
 };
 
@@ -384,12 +394,13 @@ public:
                 }
             }
         }
-        delete [] container;
+        delete[] container;
         return ans;
     }
-    int prim_mst_bin_min_heap(){
+    int prim_mst_bin_min_heap()
+    {
         // Container To Keep The Active Edges
-        Heap container= Heap(HEAP_SIZE);
+        Heap container = Heap(HEAP_SIZE);
         // Visited Array that denotes whether a node has been in MST or not
         bool *visited = new bool[nver]{0};
         int ans = 0;
@@ -415,58 +426,62 @@ public:
             }
         }
         return ans;
-
     }
-    int prim_mst_fib_min_heap(){
-        
-    return 0;
-    } 
-    int prim_mst_stl_priority_Queue(){
-        //most important stuff
-		//Init a Min Heap
-		priority_queue<pair<int,int>, vector<pair<int,int> > , greater<pair<int,int> > > Q; 
+    int prim_mst_fib_min_heap()
+    {
 
-		//another array
-		//visited array that denotes whether a node has been included in MST or Not
-		bool * vis = new bool[nver]{0};
-		int ans = 0;
+        return 0;
+    }
+    int prim_mst_stl_priority_Queue()
+    {
+        // most important stuff
+        // Init a Min Heap
+        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> Q;
 
-		//begin 
-		Q.push({0,0}); // weight, node
+        // another array
+        // visited array that denotes whether a node has been included in MST or Not
+        bool *vis = new bool[nver]{0};
+        int ans = 0;
 
-		while(!Q.empty()){
-			//pick out the edge with min weight
-			auto best = Q.top();
-			Q.pop();
+        // begin
+        Q.push({0, 0}); // weight, node
 
-			int to = best.second;
-			int weight = best.first;
+        while (!Q.empty())
+        {
+            // pick out the edge with min weight
+            auto best = Q.top();
+            Q.pop();
 
-			if(vis[to]){
-				//discard the edge, and continue
-				continue;
-			}
+            int to = best.second;
+            int weight = best.first;
 
-			//otherwise take the current edge
-			ans += weight;
-			vis[to] = 1;
+            if (vis[to])
+            {
+                // discard the edge, and continue
+                continue;
+            }
 
-			//add the new edges in the queue
-			for(auto x:adjl[to]){
-				if(vis[x.to]==0){
-					Q.push({x.wei,x.to});
-				}
-			}
-		}
-		return ans;
+            // otherwise take the current edge
+            ans += weight;
+            vis[to] = 1;
 
+            // add the new edges in the queue
+            for (auto x : adjl[to])
+            {
+                if (vis[x.to] == 0)
+                {
+                    Q.push({x.wei, x.to});
+                }
+            }
+        }
+        return ans;
     }
 };
 
 int main()
 {
-    freopen("inp.txt", "r", stdin);
-    freopen("output.txt", "a", stdout);
+    freopen("input1.txt", "r", stdin); // Select input1/input2/input3
+    freopen("output_prim.txt", "w", stdout);
     int v, e, a, b, c;
     cin >> v >> e;
     Graph g1 = Graph(v);
@@ -475,13 +490,57 @@ int main()
         cin >> a >> b >> c;
         g1.addedge(a, b, c);
     }
-    //Run Prim Algo Test after removing comment of below code, it will generate results
-    // cout<<v<<" "<<e<<" ";
-    // auto start1 = high_resolution_clock::now();
-    // g1.prim_mst_stl_priority_Queue();
-    // auto stop1 = high_resolution_clock::now();
-    // auto duration1 = duration_cast<microseconds>(stop1 - start1);
-    // cout<<" "<< duration1.count();
+
+    printf("Which Implementation You Want For Prim's to run?\n");
+    printf("1.STL Priority Queue\n2.Binary Min Heap\n3.LinkedList\n4.Array\n5.Exit\n");
+    int choice = -1;
+    cin >> choice;
+
+    auto start1 = high_resolution_clock::now();
+    switch (choice)
+    {
+    case 1:
+
+        cout << "STL Priority Queue : Minimum Spanning Tree Answer: " << g1.prim_mst_stl_priority_Queue();
+        break;
+    case 2:
+        // auto start2 = high_resolution_clock::now();
+        cout << "Binary Min Heap Minimum Spanning Tree Answer: " << g1.prim_mst_bin_min_heap();
+        // auto stop2 = high_resolution_clock::now();
+        // auto duration2 = duration_cast<microseconds>(stop2 - start2);
+        // cout << " Time Required: " << duration2.count() << " microseconds" << endl;
+        ;
+        break;
+    case 3:
+        // auto start3 = high_resolution_clock::now();
+        cout << "Linked List: Minimum Spanning Tree Answer: " << g1.prim_mst_linkedlist();
+        // auto stop3 = high_resolution_clock::now();
+        // auto duration3 = duration_cast<microseconds>(stop3 - start3);
+        // cout << " Time Required: " << duration3.count() << " microseconds" << endl;
+        // ;
+        break;
+    case 4:
+        // auto start4 = high_resolution_clock::now();
+        cout << "Array: Minimum Spanning Tree Answer: " << g1.prim_mst_array();
+        // auto stop4 = high_resolution_clock::now();
+        // auto duration4 = duration_cast<microseconds>(stop4 - start4);
+        // cout << " Time Required: " << duration4.count() << " microseconds" << endl;
+
+    default:
+        break;
+    }
+    auto stop1 = high_resolution_clock::now();
+    auto duration1 = duration_cast<microseconds>(stop1 - start1);
+    cout << " Time Required: " << duration1.count() << " microseconds" << endl;
+    ;
+
+    // Run Prim Algo Test after removing comment of below code, it will generate results
+    //  cout<<v<<" "<<e<<" ";
+    //  auto start1 = high_resolution_clock::now();
+    //  g1.prim_mst_stl_priority_Queue();
+    //  auto stop1 = high_resolution_clock::now();
+    //  auto duration1 = duration_cast<microseconds>(stop1 - start1);
+    //  cout<<" "<< duration1.count();
 
     // auto start2 = high_resolution_clock::now();
     // g1.prim_mst_bin_min_heap();
