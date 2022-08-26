@@ -110,8 +110,10 @@ int main()
         cin>>u>>v;
         g1.addedge(u,v);
     }
-   //g1.bfs(0);
-   //g1.printadjlist();
+    vector<int> list[ve];
+    for(int i=0; i<ve; i++){
+        scanf("%d",&list[i]);
+    }
    g1.shortest_distance_path_bfs(0,1);
     
 }
