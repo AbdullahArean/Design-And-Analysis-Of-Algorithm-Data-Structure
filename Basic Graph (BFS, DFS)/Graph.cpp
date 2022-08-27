@@ -456,7 +456,7 @@ int main()
         graph1.add_new_edge(u, v);
     }
     graph1.printadjlist();
-    graph1.dfs();
+    //graph1.dfs();
     // graph1.printlexicographicallyshortestpath(1, 3);
     // graph1.PrintShortestPathBFS(1, 3);
     // graph1.topologicalsort();
