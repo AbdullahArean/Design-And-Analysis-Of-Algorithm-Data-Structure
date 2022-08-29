@@ -6,6 +6,7 @@ class segmenttree
 {
     // Segemnt Tree;
     vector<int> st;
+    vector<int> lazy;
     int n;
     void build(int start, int ending, int node, vector<int> &v)
     {
@@ -28,6 +29,19 @@ class segmenttree
         if (start > r || ending < l)
         {
             return 0;
+        }
+        if(lazy[node]!= 0 ){
+            //pending update
+
+            //update the segment tree
+            st[node] +=lazy[node]*(ending-start+1);
+            if(start!= ending){
+                //propagating 
+            lazy[node*2+1]= lazy[node];
+
+            lazy[node*2+2]= lazy[node];
+            }
+            lazy[node]=0;
         }
         // Complete Overlapping
         if (start >= l && ending <= r)
@@ -68,6 +82,7 @@ public:
     {
         this->n = n;
         st.resize(4 * n, 0);
+        lazy.resize(4 * n, 0);
     }
     void build(vector<int> &v)
     {
@@ -110,6 +125,7 @@ class segmenttreemax
         {
             return 0;
         }
+        
         // Complete Overlapping
         if (start >= l && ending <= r)
         {
