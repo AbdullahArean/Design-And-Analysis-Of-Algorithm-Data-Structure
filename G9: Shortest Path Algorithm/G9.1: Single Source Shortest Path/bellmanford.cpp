@@ -426,7 +426,7 @@ public:
 
 int main()
 {
-    freopen("inputdj3.txt", "r", stdin);
+    freopen("inputdj.txt", "r", stdin);
     freopen("output_prim.txt", "w", stdout);
     int v, e, a, b, c;
     cin >> v >> e;
@@ -436,7 +436,7 @@ int main()
         cin >> a >> b >> c;
         g1.addedge(a, b, c);
     }
-    cout<<"Number of Vertices: "<<v<<"\nNumber of Edges: "<<e<<endl;
+    //cout<<"Number of Vertices: "<<v<<"\nNumber of Edges: "<<e<<endl;
     // g1.dijkastra_STL(0);
     // g1.dijkastra_bin_heap(0);
     cout<<g1.bellmanford(0);
