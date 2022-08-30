@@ -1,9 +1,3 @@
-Number of Vertices: 1762
-Number of Edges: 776142
-Vertex Distance From Source
-0 	 	 414
-Path(Weigth of Edge): 0<-(83)<-1<-(331)<-4
-
-1 	 	 331
-Path(Weigth of Edge): 1<-(331)<-4
-
+Number of Vertices: 4
+Number of Edges: 4
+1
