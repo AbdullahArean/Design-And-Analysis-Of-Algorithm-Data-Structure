@@ -108,14 +108,14 @@ public:
             {
                 dist[i][j] = INT_MAX;
                 pare[i][j] = -1;
-                if(i==j) {dist[i][j]=0; pare[i][j]=-2;}
+                if(i==j) {dist[i][j]=0; pare[i][j]=-1;}
             }
         }
         for (i = 0; i < nver; i++)
             for (auto j : adjlist[i])
             {
                 dist[i][j.first] = j.second;
-                pare[i][j.first]=i;
+              //  pare[i][j.first]=i;
             }
 
         for (k = 0; k < nver; k++)
@@ -136,7 +136,7 @@ public:
             {
                 for (j = 0; j < nver; j++)
                 {
-                    cout<<pare[i][j]+1<<" ";
+                    cout<<pare[i][j]<<" ";
                 }
                 cout<<"\n";
             }
@@ -151,7 +151,7 @@ public:
     {
         if (pare[source][destination] == -1)
         {
-            cout << "No Path Exists\n";
+            cout <<source<<" ";
             return;
         }
         if (pare[source][destination] == destination)
