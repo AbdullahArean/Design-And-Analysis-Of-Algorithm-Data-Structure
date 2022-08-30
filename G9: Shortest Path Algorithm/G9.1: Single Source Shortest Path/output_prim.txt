@@ -1,3 +1,0 @@
-Number of Vertices: 4
-Number of Edges: 4
-1

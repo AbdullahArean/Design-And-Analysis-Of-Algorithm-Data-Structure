@@ -131,6 +131,13 @@ public:
                 }
             }
         }
+         for (int i = 0; i < nver; i++)
+        {
+            for (auto j : adjlist[i])
+            {
+                
+            }
+        }
     }
     };
 
