@@ -1,0 +1,21 @@
+Number of Vertices: 4
+Number of Edges: 4
+Vertex Distance From Source
+0 	 	 0
+Path(Weigth of Edge): 0
+
+1 	 	 -1
+Path(Weigth of Edge): 1<-(-1)<-0
+
+2 	 	 -5
+Path(Weigth of Edge): 2<-(-4)<-1<-(-1)<-0
+
+3 	 	 -2
+Path(Weigth of Edge): 3<-(3)<-2<-(-4)<-1<-(-1)<-0
+
+1
+-1 -1 1 2 
+3 -1 -1 2 
+3 3 -1 -1 
+-1 0 1 -1 
+0 1 2 
