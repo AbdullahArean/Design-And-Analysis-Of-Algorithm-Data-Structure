@@ -16,19 +16,20 @@ int main()
     freopen("inp.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
     auto start = high_resolution_clock::now();
-    int price[1000000];
+    long long int ans=0;
     int n, m;
     cin >> n;
     for (int i = 0; i < n; i++)
     {
         cin >> m;
+        int price[1000000];
         for (int j = 0; j < m; j++)
         {
             cin >> price[j];
-            rodcutting(price, m) ;
         }
+        ans+=rodcutting(price, m) ;
     }
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
-    cout <<"Recursion: "<< duration.count() << endl;
+    cout <<"Recursion: "<<ans<<" "<< duration.count() << endl;
 }

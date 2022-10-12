@@ -7,8 +7,8 @@ import os
 # Print
 file_path = 'inp.txt'
 sys.stdout = open(file_path, "w")
-lowb=100
-upb=200
+lowb=10
+upb=20
 n=random.randint(lowb,upb)
 print(n)
 for i in range(n):
@@ -22,9 +22,8 @@ for i in range(n):
 str1 = 'rodcutting_memo'
 str= 'rodcutting_rec'
 str2= 'rodcutting_bottomup'
-#os.system(f"cd '../Home-Assignment/' && g++ {str}.cpp -o {str} && '../Home-Assignment/'{str}")
-os.system(f"cd '../Home-Assignment/' && g++ {str1}.cpp -o {str1} && '../Home-Assignment/'{str1}")
-os.system(f"cd '../Home-Assignment/' && g++ {str2}.cpp -o {str2} && '../Home-Assignment/'{str2}")
-
+# os.system(f"cd '../Home-Assignment/' && g++ {str}.cpp -o {str} && '../Home-Assignment/'{str}")
+# os.system(f"cd '../Home-Assignment/' && g++ {str1}.cpp -o {str1} && '../Home-Assignment/'{str1}")
+# os.system(f"cd '../Home-Assignment/' && g++ {str2}.cpp -o {str2} && '../Home-Assignment/'{str2}")
 
 

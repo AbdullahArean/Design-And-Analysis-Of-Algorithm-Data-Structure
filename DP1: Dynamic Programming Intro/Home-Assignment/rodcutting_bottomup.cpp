@@ -25,6 +25,7 @@ int main()
     auto start = high_resolution_clock::now();
     int price[1000000];
     int n, m;
+    long long int ans=0;
     cin >> n;
     for (int i = 0; i < n; i++)
     {
@@ -32,10 +33,10 @@ int main()
         for (int j = 0; j < m; j++)
         {
             cin >> price[j];
-            rodcutting(price, m) ;
         }
+            ans+=rodcutting(price, m) ;
     }
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
-    cout <<"Bottom Up/ Tabulation: "<< duration.count() << endl;
+    cout <<"Bottom Up/ Tabulation: "<<ans<<" "<< duration.count() << endl;
 }
