@@ -2,7 +2,7 @@
 #include <chrono>
 using namespace std::chrono;
 using namespace std;
-int dp[10000][10000];
+int dp[100][100];
 int lcs_memo(string s1, string s2, int i = 0, int j = 0)
 {
     if (i == 0 && j == 0)
@@ -30,7 +30,7 @@ int lcs_memo(string s1, string s2, int i = 0, int j = 0)
 int main()
 {
     freopen("inp.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+    freopen("output.txt", "a", stdout);
     auto start = high_resolution_clock::now();
     int n;
     cin >> n;
@@ -42,5 +42,5 @@ int main()
     }
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
-    cout <<"Recursion: "<< duration.count() << endl;
+    cout <<"Top Down/Memoization: "<< duration.count() << endl;
 }
