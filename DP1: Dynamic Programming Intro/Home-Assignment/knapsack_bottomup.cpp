@@ -1,9 +1,10 @@
+#bugggggggggg
 #include <bits/stdc++.h>
 #include <chrono>
 using namespace std::chrono;
 using namespace std;
 int weight[1001],profit[1001];
-int Mat[101][1001];
+int Mat[1001][1001];
 int knapsack_tabu(int N, int W)
 {
     memset(Mat,0,sizeof(Mat));
@@ -41,8 +42,8 @@ int main()
     {
         cin >> weight[i] >> profit[i];
     }
-    knapsack_tabu(W, N);
+    int ans = knapsack_tabu(W, N);
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
-    cout <<"Bottom Up/Tabulation: "<< duration.count() << endl;
+    cout <<"Bottom Up/Tabulation: "<<ans<<" "<< duration.count() << endl;
 }

@@ -3,7 +3,7 @@
 using namespace std::chrono;
 using namespace std;
 int weight[1001],profit[1001];
-int Mat[101][1001];
+int Mat[1001][1001];
 int knapsack_memo(int W, int n)
 {
     if (n == 0 || W == 0)
@@ -27,8 +27,8 @@ int main()
     {
         cin >> weight[i] >> profit[i];
     }
-    knapsack_memo(W, N);
+    int ans=knapsack_memo(W, N);
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
-    cout <<"Top Down/Memoization: "<< duration.count() << endl;
+    cout <<"Top Down/Memoization: "<<ans<< " "<< duration.count() << endl;
 }

@@ -3,7 +3,6 @@
 using namespace std::chrono;
 using namespace std;
 int weight[1001], profit[1001];
-
 int knapsack_rec(int W, int n)
 {
     if (n == 0 || W == 0)
