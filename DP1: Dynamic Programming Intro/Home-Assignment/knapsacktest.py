@@ -10,7 +10,7 @@ lowb=10
 upb=20
 n=random.randint(lowb,upb)
 print(n, end=' ')
-print(n*round(n/2))
+print(n*2)
 for i in range(n):
     N=random.randint(lowb,upb)
     print( N, end=' ')
@@ -18,12 +18,12 @@ for i in range(n):
     print(NN)
 
 #Test With Code
-str1 = 'knapsack_memo'
 str= 'knapsack_rec'
+str1 = 'knapsack_memo'
 str2= 'knapsack_bottomup'
 os.system(f"cd '../Home-Assignment/' && g++ {str}.cpp -o {str} && '../Home-Assignment/'{str}")
-os.system(f"cd '../Home-Assignment/' && g++ {str1}.cpp -o {str1} && '../Home-Assignment/'{str1}")
-os.system(f"cd '../Home-Assignment/' && g++ {str2}.cpp -o {str2} && '../Home-Assignment/'{str2}")
+# os.system(f"cd '../Home-Assignment/' && g++ {str1}.cpp -o {str1} && '../Home-Assignment/'{str1}")
+# os.system(f"cd '../Home-Assignment/' && g++ {str2}.cpp -o {str2} && '../Home-Assignment/'{str2}")
 
 
 

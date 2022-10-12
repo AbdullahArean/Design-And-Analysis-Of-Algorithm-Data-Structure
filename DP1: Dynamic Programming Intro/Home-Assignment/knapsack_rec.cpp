@@ -18,14 +18,14 @@ int main()
     freopen("inp.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
     auto start = high_resolution_clock::now();
-      int N, W;
+    int N, W;
     cin >> N >> W; // N = number of item, W = total weight to be considered(#knapsack_tabu_rec's Weight)
     for (int i = 0; i < N; i++)
     {
         cin >> weight[i] >> profit[i];
     }
-    knapsack_rec(W, N);
+   int ans= knapsack_rec(W, N);
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
-    cout << "Recursion: " << duration.count() << endl;
+    cout << "Recursion: " <<ans<<" "<< duration.count() << endl;
 }
