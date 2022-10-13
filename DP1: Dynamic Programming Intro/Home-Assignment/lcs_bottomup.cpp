@@ -33,14 +33,15 @@ int main()
     freopen("output.txt", "a", stdout);
     auto start = high_resolution_clock::now();
     int n;
+    long long int ans=0;
     cin >> n;
     for (int i = 0; i < n; i++)
-    {
+    {   memset(dp,-1,sizeof(dp));
             string str1, str2;
             cin >> str1>>str2;
-            lcs_tabu(str1, str2);
+            ans+=lcs_tabu(str1, str2);
     }
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
-    cout  <<"Bottom Up/ Tabulation: "<<  duration.count() << endl;
+    cout  <<"Bottom Up/ Tabulation: "<<ans<<  duration.count() << endl;
 }

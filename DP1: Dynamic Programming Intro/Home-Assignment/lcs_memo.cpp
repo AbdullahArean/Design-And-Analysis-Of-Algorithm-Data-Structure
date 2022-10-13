@@ -34,13 +34,15 @@ int main()
     auto start = high_resolution_clock::now();
     int n;
     cin >> n;
+    long long int ans=0;
     for (int i = 0; i < n; i++)
     {
+        memset(dp,-1,sizeof(dp));
             string str1, str2;
             cin >> str1>>str2;
-            lcs_memo(str1, str2);
+            ans+=lcs_memo(str1, str2);
     }
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
-    cout <<"Top Down/Memoization: "<< duration.count() << endl;
+    cout <<"Top Down/Memoization: "<<ans<< " "<< duration.count() << endl;
 }
