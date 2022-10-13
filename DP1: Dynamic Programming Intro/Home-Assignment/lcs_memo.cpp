@@ -37,7 +37,7 @@ int main()
     long long int ans=0;
     for (int i = 0; i < n; i++)
     {
-        memset(dp,-1,sizeof(dp));
+        //memset(dp,-1,sizeof(dp));
             string str1, str2;
             cin >> str1>>str2;
             ans+=lcs_memo(str1, str2);

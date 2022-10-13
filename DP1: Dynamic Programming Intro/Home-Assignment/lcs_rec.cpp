@@ -14,13 +14,14 @@ int lcs_rec(string s1, string s2, int i = 0, int j = 0)
 int main()
 {
     freopen("inp.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+    freopen("output.txt", "a", stdout);
     auto start = high_resolution_clock::now();
     int n;
-    long long int ans=0;
     cin >> n;
+    long long int ans=0;
     for (int i = 0; i < n; i++)
     {
+        //memset(dp,-1,sizeof(dp));
             string str1, str2;
             cin >> str1>>str2;
             ans+=lcs_rec(str1, str2);

@@ -43,5 +43,5 @@ int main()
     }
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
-    cout  <<"Bottom Up/ Tabulation: "<<ans<<  duration.count() << endl;
+    cout  <<"Bottom Up/ Tabulation: "<<ans<<" "<< duration.count() << endl;
 }

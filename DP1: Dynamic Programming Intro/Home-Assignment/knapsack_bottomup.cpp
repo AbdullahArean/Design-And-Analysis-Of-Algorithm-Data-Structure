@@ -17,6 +17,7 @@ int dp[1001][1001];
     }
     return dp[N][W];
 }
+
 int main()
 {
     freopen("inp.txt", "r", stdin);
