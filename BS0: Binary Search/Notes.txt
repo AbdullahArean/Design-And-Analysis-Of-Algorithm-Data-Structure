@@ -1,0 +1,17 @@
+Topic : Binary Search
+Resources: 
+        1. Aditya Verma Playlist (https://www.youtube.com/playlist?list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ_f2)
+        2. Errichto (https://www.youtube.com/watch?v=LcWPKR1uef4&ab_channel=Errichto2)
+        3. Must do Problems (https://www.youtube.com/watch?v=U66U1-umNbQ&ab_channel=KartikArora)
+        4. Advanced Binary Search Predicate funtion (https://www.youtube.com/watch?v=JAfJssvFgDI&ab_channel=Luv)
+        5. Binary Search Problems (https://www.youtube.com/watch?v=vh0jtsTXhno&list=PLamzFoFxwoNhR2uFoqm6nr8VgsERgTmYy&ab_channel=IDeserve)
+        
+Notes:
+        1. Use Mid = Low + (High-Low)/2 istead of (Low+High)/2 to avoid integer overflow
+        2. Number of time array is rotated is the index of minimum element (0,1,....,N-1)
+        3. Finding minimum element in a rotated sorted array:
+                minimum element of this kind of array is smaller than both of their components
+                if mid is not that kind, compare with start and end, ans go to the unsorted part
+        4. Infinte Sorted Array (Important for Interview) : https://youtu.be/FzvK5uuaki8 + https://youtu.be/8x6dmO6XW8k
+        5. Binary Search on Answers is an Important concept.
+                
